@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false };
+            var dateString = now.toLocaleDateString('en-US', options);
+            document.title = dateString;
+            document.getElementById("currentDateTime").textContent = dateString;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1><div id="currentDateTime"></div></h1>
+    <p>This is a simple HTML page that displays the current date and time in the tab name.</p>
+</body>
+</html>
